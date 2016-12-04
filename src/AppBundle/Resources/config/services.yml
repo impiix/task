@@ -1,3 +1,11 @@
 services:
-  blog.service:
-    class: AppBundle\Service\BlogService
+  post.service:
+    class: AppBundle\Service\PostService
+    arguments: ['@doctrine.orm.entity_manager']
+  post.repository:
+    class: AppBundle\Repository\PostRepository
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments: ['AppBundle\Entity\Post']
+  mail.service:
+    class: AppBundle\Service\MailService
+    arguments: ['@mailer', '%recipient%']
