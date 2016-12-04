@@ -4,9 +4,9 @@
 <table>
     <tr>
         {# sorting of properties based on query components #}
-        <th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
-        <th{% if pagination.isSorted('a.Title') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Title', 'a.title') }}</th>
-        <th>{{ knp_pagination_sortable(pagination, 'Created', 'a.created') }}</th>
+        <th>{{ knp_pagination_sortable(pagination, 'Id', 'p.id') }}</th>
+        <th{% if pagination.isSorted('a.Title') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Title', 'p.title') }}</th>
+        <th>{{ knp_pagination_sortable(pagination, 'Created', 'p.created') }}</th>
     </tr>
 
     {# table body #}
